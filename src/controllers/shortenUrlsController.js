@@ -1,7 +1,6 @@
 import { nanoid } from "nanoid";
 import { urlInfoRepository } from "../repositories/urlInfoRepository.js";
 
-
 export async function shortenUrlsController(req, res){
     const session = res.locals.session
     const userId = session.rows[0].user_id
