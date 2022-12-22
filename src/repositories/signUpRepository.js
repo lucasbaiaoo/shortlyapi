@@ -1,6 +1,6 @@
 import connectionDB from "../database/db.js";
 
-export function signUpRepository(name, email, hashPassword){
+export function signUpInfoRepository(name, email, hashPassword){
     return connectionDB.query("INSERT INTO users (name, email, password) VALUES ($1, $2, $3);", [name, email, hashPassword]);
 }
 

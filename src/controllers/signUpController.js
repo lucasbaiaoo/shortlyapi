@@ -1,5 +1,5 @@
 import bcrypt from "bcrypt";
-import { emailConflictVerificationRepository, signUpRepository } from "../repositories/signUpRepository.js";
+import { emailConflictVerificationRepository, signUpInfoRepository } from "../repositories/signUpRepository.js";
 
 export async function signUpController(req, res) {
     const {name, email, password, confirmPassword} = req.body;
@@ -26,7 +26,7 @@ export async function signUpController(req, res) {
     const hashPassword = bcrypt.hashSync(password, 10);
   
     try {
-      await signUpRepository(name, email, hashPassword)
+      await signUpInfoRepository(name, email, hashPassword)
       res.sendStatus(201);
     } catch (error) {
       console.log(error);
