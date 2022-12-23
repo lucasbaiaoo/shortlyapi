@@ -19,7 +19,12 @@ export async function getUserUrlsController(req, res){
 })
         console.log(userUrls);
 
-        res.status(202).send({"id": userId, "name": userInfo.rows[0].name, "visitCount":totalVisitCount, "shortenedUrls":userUrls}) 
+        res.status(202).send({
+            "id": userId,
+            "name": userInfo.rows[0].name,
+            "visitCount":totalVisitCount,
+            "shortenedUrls":userUrls
+        }) 
     } catch (error) {
         console.log(error);
         res.sendStatus(500);

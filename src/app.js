@@ -6,7 +6,8 @@ import shortenUrlsRoute from "./routes/shortenUrlsRoute.js";
 import urlRoute from "./routes/urlRoute.js";
 import openUrlRoute from "./routes/openUrlRoute.js";
 import deleteUrlRoute from "./routes/deleteUrlRoute.js";
-import userUrlsRoute from "./routes/userUrlsRoute.js"
+import userUrlsRoute from "./routes/userUrlsRoute.js";
+import rankingRoute from "./routes/rankingRoute.js";
 
 const server = express();
 server.use(cors());
@@ -18,6 +19,7 @@ server.use(urlRoute);
 server.use(openUrlRoute);
 server.use(deleteUrlRoute);
 server.use(userUrlsRoute);
+server.use(rankingRoute);
 
 const port = process.env.PORT || 4000;
 server.listen(port, () => console.log(`Server running in port: ${port}`));
