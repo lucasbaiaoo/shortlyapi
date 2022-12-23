@@ -4,7 +4,6 @@ export async function getRankingCrontroller(req, res){
     
     try{
         const rankingInfo = await getRankingRepository();
-        console.log(rankingInfo);
 
         const ranking = rankingInfo.rows.map((row) => ({
             "id": row.id,

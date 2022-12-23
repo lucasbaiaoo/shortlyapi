@@ -3,9 +3,10 @@ import { getUserInfoRepository } from "../repositories/getUserInfoRepository.js"
 export async function getUserUrlsController(req, res){
     const session = res.locals.session;
     const userId = session.rows[0].user_id;
-
+    
     try {
         const userInfo = await getUserInfoRepository(userId)
+        console.log(userInfo);
         const userVisitsCounts = userInfo.rows.map((row) => row.visit_count);
         let totalVisitCount = 0;
 
