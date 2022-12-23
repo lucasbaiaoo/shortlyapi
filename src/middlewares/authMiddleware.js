@@ -13,7 +13,7 @@ export async function authMiddleware(req, res, next) {
       const session = await authRepository(token);
   
       if (session.rowCount === 0) {
-        res.sendStatus(401);
+        res.sendStatus(404);
         return;
       }
       res.locals.session = session;
